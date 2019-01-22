@@ -31,8 +31,10 @@ export default IndexPage
 export const query = graphql`
 query {
   strapi {
-    menuitems {
-      id, title, description, category, price
+    menuitems(where: {venue: 1}) {
+      id, title, description, category, price, venue {
+        id
+      }
     }
   }
 }
